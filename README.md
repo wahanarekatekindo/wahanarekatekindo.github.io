@@ -1,1 +1,1 @@
-Fallback domain when server offline
+Fallback page when server offline
