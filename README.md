@@ -1,1 +1,1 @@
-Fallback domain ketika server offline
+Fallback domain when server offline
