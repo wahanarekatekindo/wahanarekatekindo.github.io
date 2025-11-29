@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT Wahana Reka Tekindo - Sementara Offline</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts (Plus Jakarta Sans - Modern Font) -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#020617',  /* Slate 950 - Lebih gelap untuk kontras */
+                            primary: '#0056b3', /* Blue Corporate - Biru Wahana Reka Tekindo */
+                            secondary: '#007bff', /* Lighter Blue */
+                            accent: '#0ea5e9',  /* Sky 500 - Pengganti Orange/Kuning */
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #0056b3, #0ea5e9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Pattern Background */
+        .bg-grid-slate-100 {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23f1f5f9' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-700 antialiased bg-slate-50 relative">
+
+    <!-- SYSTEM STATUS BANNER -->
+    <!-- Diubah dari Kuning/Orange ke Biru Tua/Gelap agar senada namun tetap terlihat sebagai notifikasi -->
+    <div class="bg-brand-primary text-white px-4 py-3 text-center relative z-[60] shadow-md border-b border-blue-400/30">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-2 text-sm font-medium">
+            <span class="flex items-center bg-white/20 px-2 py-1 rounded text-xs uppercase tracking-wider font-bold border border-white/20">
+                <i class="fas fa-info-circle mr-2 animate-pulse"></i> System Maintenance
+            </span>
+            <p>
+                Website utama sedang offline untuk pemeliharaan terjadwal. Anda sedang melihat halaman profil darurat (Lite Version).
+            </p>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-3">
+                    <!-- Logo W diubah jadi biru -->
+                    <div class="w-10 h-10 bg-brand-primary/10 rounded-lg flex items-center justify-center text-brand-primary font-bold text-xl">
+                        W
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-xl tracking-tight text-brand-primary leading-none">Wahana Reka Tekindo</span>
+                        <span class="text-[10px] text-slate-500 font-bold uppercase tracking-widest mt-1">Lite Mode</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-sm font-semibold text-slate-600 hover:text-brand-primary transition">Tentang</a>
+                    <a href="#services" class="text-sm font-semibold text-slate-600 hover:text-brand-primary transition">Layanan</a>
+                    <a href="#emergency-contact" class="text-sm font-semibold text-red-600 hover:text-red-700 transition flex items-center gap-2">
+                        <i class="fas fa-phone-alt"></i> Kontak Darurat
+                    </a>
+                </div>
+                <a href="#contact" class="hidden md:block bg-brand-primary text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-brand-dark transition shadow-lg shadow-blue-900/20">
+                    Hubungi Kami
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Fallback Message) -->
+    <section class="relative pt-10 pb-20 lg:pt-22 lg:pb-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-slate-200 shadow-xl">
+                <!-- Status Badge diubah jadi biru/slate -->
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-brand-primary text-xs font-bold uppercase tracking-wider mb-6 border border-slate-200">
+                    <span class="w-2 h-2 rounded-full bg-brand-accent"></span>
+                    Operational Status: Limited
+                </div>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight mb-6 leading-tight">
+                    Kami Akan Segera <br>
+                    <span class="text-gradient">Kembali Online</span>
+                </h1>
+                <p class="text-lg text-slate-500 mb-8 leading-relaxed">
+                    Mohon maaf atas ketidaknyamanan ini. Server utama PT Wahana Reka Tekindo sedang tidak dapat diakses saat ini. Namun, operasional perusahaan <strong>tetap berjalan normal</strong>.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <!-- Tombol WA tetap hijau karena brand color WA, tapi tombol email disesuaikan -->
+                    <a href="https://wa.me/6281354676005" class="px-8 py-4 bg-green-600 text-white rounded-xl font-bold hover:bg-green-700 transition shadow-xl shadow-green-900/20 flex items-center justify-center gap-2">
+                        <i class="fab fa-whatsapp text-xl"></i> Chat WhatsApp
+                    </a>
+                    <a href="mailto:wahanarekatekindo@gmail.com" class="px-8 py-4 bg-white text-brand-primary border border-slate-200 rounded-xl font-bold hover:bg-slate-50 transition flex items-center justify-center gap-2">
+                        <i class="far fa-envelope text-xl"></i> Kirim Email
+                    </a>
+                </div>
+                <p class="mt-6 text-xs text-slate-400">
+                    Tim IT kami sedang bekerja untuk memulihkan akses penuh ke website.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Abstract Background Shapes -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 bg-slate-50">
+            <div class="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))]"></div>
+            <!-- Blur shape diubah jadi biru muda -->
+            <div class="absolute top-[20%] left-[50%] -translate-x-1/2 w-[600px] h-[600px] bg-blue-100/50 rounded-full blur-3xl opacity-50"></div>
+        </div>
+    </section>
+
+    <!-- Essential Info Only (Simplified for Fallback) -->
+    <section id="about" class="bg-white py-16 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Info 1: Siapa Kami -->
+                <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-blue-50/50 transition border border-transparent hover:border-blue-100">
+                    <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-brand-primary shrink-0">
+                        <i class="fas fa-info-circle text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-900 text-lg">Siapa Kami?</h3>
+                        <p class="text-slate-500 text-sm mt-1 leading-relaxed">
+                            PT Wahana Reka Tekindo adalah perusahaan jasa konsultansi konstruksi dan non-konstruksi yang didirikan pada tahun 1992. Kami berpengalaman dalam manajemen proyek, perencanaan, dan pengawasan.
+                        </p>
+                    </div>
+                </div>
+                <!-- Info 2: Layanan Utama -->
+                <div id="services" class="flex items-start gap-4 p-4 rounded-xl hover:bg-blue-50/50 transition border border-transparent hover:border-blue-100">
+                    <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-brand-primary shrink-0">
+                        <i class="fas fa-briefcase text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-900 text-lg">Layanan Utama</h3>
+                        <ul class="text-slate-500 text-sm mt-1 list-disc list-inside space-y-1">
+                            <li>Perencanaan & Rancangan (Engineering Design)</li>
+                            <li>Pengawasan Konstruksi</li>
+                            <li>Studi & Evaluasi (Feasibility Study)</li>
+                            <li>Manajemen Proyek & Konsultansi IT</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Info 3: Lokasi -->
+                <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-blue-50/50 transition border border-transparent hover:border-blue-100">
+                    <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-brand-primary shrink-0">
+                        <i class="fas fa-map-marker-alt text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-900 text-lg">Lokasi Kantor</h3>
+                        <p class="text-slate-500 text-sm mt-1">
+                            <strong>Operasional:</strong><br>
+                            Graha Simatupang Tower II B Lt.1, Jl. TB. Simatupang Kav.38, Jati Padang, Jakarta Selatan.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Contact Section -->
+    <section id="contact" class="py-12 px-4 bg-slate-50">
+        <div class="max-w-4xl mx-auto bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-slate-200">
+            <h2 class="text-2xl font-bold text-slate-900 mb-8 text-center">Informasi Kontak Langsung</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <a href="tel:+622172791984" class="flex items-center justify-between p-5 rounded-xl bg-slate-50 hover:bg-blue-50 border border-slate-100 hover:border-blue-200 transition group cursor-pointer">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm text-slate-400 group-hover:text-brand-primary transition">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-400 uppercase font-bold tracking-wider">Telepon Kantor</p>
+                            <p class="font-bold text-lg text-slate-700 group-hover:text-brand-primary transition">(021) 72791984</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="mailto:wahanarekatekindo@gmail.com" class="flex items-center justify-between p-5 rounded-xl bg-slate-50 hover:bg-blue-50 border border-slate-100 hover:border-blue-200 transition group cursor-pointer">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm text-slate-400 group-hover:text-brand-primary transition">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-400 uppercase font-bold tracking-wider">Email Bisnis</p>
+                            <p class="font-bold text-lg text-slate-700 group-hover:text-brand-primary break-all transition">wahanarekatekindo@gmail.com</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Additional Address Info -->
+            <div class="mt-8 pt-8 border-t border-slate-100 text-center">
+                 <p class="text-sm text-slate-500 mb-2 font-semibold">Alamat Terdaftar:</p>
+                 <p class="text-sm text-slate-500">Ruko Urbana Square, Jl. Pajajaran No. 24 Blok I, Pamulang, Tangerang Selatan, Banten.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-slate-400 text-sm bg-white border-t border-slate-100">
+        <p class="mb-2">&copy; 2025 PT Wahana Reka Tekindo.</p>
+        <p>Server Status: <span class="text-brand-accent font-bold">● Offline / Maintenance Mode</span></p>
+    </footer>
+
+</body>
+</html>
